@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>20B29</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>ScriptableIntents</string>
+	<key>CFBundleExecutable</key>
+	<string>ScriptableIntents</string>
+	<key>CFBundleIdentifier</key>
+	<string>dk.simonbs.Scriptable.Intents</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ScriptableIntents</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.6.2</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>174</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12B45b</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>11.0</string>
+	<key>DTSDKBuild</key>
+	<string>20A2408</string>
+	<key>DTSDKName</key>
+	<string>macosx11.0</string>
+	<key>DTXcode</key>
+	<string>1220</string>
+	<key>DTXcodeBuild</key>
+	<string>12B45b</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.15</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Scriptable needs access to your calendar in order to use it in your scripts.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Scriptable needs access to your camera for it to be used in your scripts.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Scriptable needs access to your contacts in order to use them in your scripts.</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>IntentsRestrictedWhileLocked</key>
+			<array/>
+			<key>IntentsRestrictedWhileProtectedDataUnavailable</key>
+			<array/>
+			<key>IntentsSupported</key>
+			<array>
+				<string>RefreshAllWidgetsIntent</string>
+				<string>RunScriptWidgetConfigurationIntent</string>
+			</array>
+		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.intents-service</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>ScriptableIntents.IntentHandler</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Scriptable needs access to your location in order to use it in your scripts.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Scriptable needs access to your microphone in order to use dictation in your scripts.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Scriptable needs access to your photo library for it to be used in your scripts.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Scriptable needs access to your photo library for it to be used in your scripts.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Scriptable needs access to your reminders in order to use them in your scripts.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Scriptable needs access to speech recognition in order to use dictation in your scripts.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fa-solid-900.ttf</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>2</integer>
+	</array>
+</dict>
+</plist>

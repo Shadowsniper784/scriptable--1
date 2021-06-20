@@ -1,0 +1,178 @@
+<html>
+
+<head>
+  <title>{{SCRIPT_NAME}}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-startup-image" media="(orientation: landscape)"
+    href="http://localhost:{{PORT}}/home-screen/assets/{{LANDSCAPE_LAUNCH_SCREEN_FILENAME}}" />
+  <link rel="apple-touch-startup-image" media="(orientation: portrait)"
+    href="http://localhost:{{PORT}}/home-screen/assets/{{PORTRAIT_LAUNCH_SCREEN_FILENAME}}" />
+  <link rel="apple-touch-icon-precomposed" href="http://localhost:{{PORT}}/home-screen/assets/{{ICON_FILENAME}}" />
+  <style>
+    html,
+    body {
+      color: #000;
+      background-color: #fff;
+      padding: 0;
+      margin: 0;
+      font-family: -apple-system;
+    }
+
+    div#content {
+      display: none;
+    }
+
+    div.header {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+      background-color: #E5E5EA;
+    }
+
+    img#icon {
+      width: 96px;
+      height: 96px;
+    }
+
+    h1.script-name {
+      margin: 0;
+      margin-top: 20px;
+      color: #000;
+      font-weight: 600;
+    }
+
+    h3.subtitle {
+      margin: 0;
+      margin-top: 5px;
+      color: #000;
+      font-weight: 500;
+    }
+
+    div.instructions {
+      font-size: 1.2em;
+    }
+
+    div.instructions div.step {
+      text-align: center;
+    }
+
+    div.instructions div.step img.screenshot {
+      width: 300px;
+    }
+
+    div.instructions div.step1 {
+      margin-top: 25px;
+    }
+
+    div.instructions div.step2 {
+      margin-top: 35px;
+    }
+
+    div.instructions div.step3 {
+      margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    div.instructions div.step3 img.screenshot {
+      width: 318px;
+    }
+
+    div#launch {
+      width: 100%;
+      height: 100%;
+    }
+
+    div#launch img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 196px;
+      height: 196px;
+      margin-top: -98px;
+      margin-left: -98px;
+    }
+
+    @media (prefers-color-scheme: dark), (display-mode: standalone) {
+      html, body {
+        color: #fff;
+        background-color: #000;
+      }
+      
+      div.header {
+        background-color: #2C2C2E;
+      }
+
+      h1.script-name {
+        color: #fff;
+      }
+
+      h3.subtitle {
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <div class="header">
+      <img id="icon" src="http://localhost:{{PORT}}/home-screen/assets/{{ICON_FILENAME}}" />
+      <h1 class="script-name">{{SCRIPT_NAME}}</h1>
+      <h3 class="subtitle">Run script from home screen</h3>
+    </div>
+    <div class="instructions">
+      <div class="step step1">
+        <p>
+          <img class="screenshot" src="http://localhost:{{PORT}}/home-screen/statics/step1.png">
+        </p>
+        <p>1. Tap the share button.</p>
+      </div>
+      <div class="step step2">
+        <p>
+          <img class="screenshot" src="http://localhost:{{PORT}}/home-screen/statics/step2.png">
+        </p>
+        <p>2. Tap "Add to Home Screen".</p>
+      </div>
+      <div class="step step3">
+        <p>
+          <img class="screenshot" src="http://localhost:{{PORT}}/home-screen/statics/step3.png">
+        </p>
+        <p>3. Tap "Add".</p>
+      </div>
+    </div>    
+  </div>
+  <div id="launch">
+    <img src="data:image/png;base64, {{ENCODED_ICON}}" />
+  </div>
+  <script type="text/javascript">
+    if (navigator.standalone) {
+      let originalLocation = window.location
+      let scriptURL = "scriptable:///runFromHomeScreen"
+        + "/{{SCRIPT_NAME}}"
+        + "&dk.simonbs.scriptable.homeScreenVersion=2"        
+      window.location = scriptURL
+      let wasHidden = false
+      document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+          wasHidden = true
+        } else {
+          if (wasHidden) {
+            wasHidden = false
+            window.stop()
+            window.location = originalLocation
+          }
+        }
+      })
+    } else {
+      let contentDiv = document.getElementById("content")
+      let launchDiv = document.getElementById("launch")
+      contentDiv.style.display = "block"
+      launchDiv.style.display = "none"
+    }
+  </script>
+</body>

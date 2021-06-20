@@ -1,0 +1,37 @@
+{
+	"version": "1.6",
+	"sections": [{
+		"title": null,
+		"body": [{
+            "type": "new",
+            "text": "The new gallery contains example scripts to get you started using Scriptable. Have a script you'd like to share with the community? You can submit your script for consideration to be included in the gallery over at https://gallery.scriptable.app/submit"
+        }, {
+			"type": "new",
+			"text": "Create dynamic colors with the Color.dynamic(lightColor, darkColor) function. These colors automatically adjust to match the system appearance and work great with widgets."
+		}, {
+			"type": "new",
+			"text": "The LinearGradient have new startPoint and endPoint properties to control the direction of the gradient."
+		}, {
+			"type": "new",
+			"text": "FileManger has a new cacheDirectory() function to get the path to the directory suitable for caching data."
+		}, {
+			"type": "new",
+			"text": "Request has a new timeoutInterval property that specifies the duration a connection attempt must remain idle for the request to timeout."
+		}, {
+            "type": "new",
+            "text": "Reminder has a new isOverdue property that indicates if a reminder is overdue."
+        }, {
+			"type": "new",
+			"text": "Uses the scriptable:///run/{scriptName} URL scheme when running a script. The old scriptable:///run?scriptName={scriptName} is still supported. The new one is compatible with more online services when defining a redirect URL as part of an OAuth flow."
+		}, {
+			"type": "bugfix",
+			"text": "Accessing the hex property on a Color object would sometimes cause the app to crash."
+		}, {
+            "type": "bugfix",
+            "text": "Scripts would sometimes fail when it used the CallbackURL API, had \"Always Run in App\" enabled and was running from the Share Sheet."
+        }, {
+            "type": "bugfix",
+            "text": "Fixes typos in the documentation."
+        }]
+	}]
+}
